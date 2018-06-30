@@ -6,38 +6,38 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.create([{ title: 'Frontend' },
-                 { title: 'Backend' },
-                 { title: 'Mobile Development' }])
+categories = Category.create!([{ title: 'Frontend' },
+                              { title: 'Backend' },
+                              { title: 'Mobile Development' }])
 
-Test.create([{ title: 'Ruby', level: 0,
-               category_id: 2 },
-             { title: 'HTML', level: 2,
-               category_id: 1 },
-             { title: 'Swift', level: 1,
-               category_id: 3 }])
+tests = Test.create!([{ title: 'Ruby', level: 0,
+                       category_id: categories[1].id },
+                     { title: 'HTML', level: 2,
+                       category_id: categories[0].id },
+                     { title: 'Swift', level: 1,
+                       category_id: categories[2].id }])
 
-Question.create([{ body: 'Ruby question 1',
-                   test_id: 1 },
-                 { body: 'HTML question 2',
-                   test_id: 2 },
-                 { body: 'Swift question 1',
-                   test_id: 3 }])
+questions = Question.create!([{ body: 'Ruby question 1',
+                               test_id: tests[0].id },
+                             { body: 'HTML question 2',
+                               test_id: tests[1].id },
+                             { body: 'Swift question 1',
+                               test_id: tests[2].id }])
 
-Answer.create([{ body: 'Wrong answer 1',
-                 question_id: 1 },
-               { body: 'Wrong answer 2',
-                 question_id: 1 },
-               { body: 'Correct answer',
-                 question_id: 1, correct: true }])
+answers = Answer.create!([{ body: 'Wrong answer 1',
+                           question_id: questions[0].id },
+                         { body: 'Wrong answer 2',
+                           question_id: questions[0].id },
+                         { body: 'Correct answer',
+                           question_id: questions[0].id, correct: true }])
 
-User.create([{ email: 'foo1@bar.com',
-               first_name: 'John',
-               last_name: 'Doe'},
-             { email: 'foo2@bar.com',
-               first_name: 'Jane',
-               last_name: 'Doe' }])
+users = User.create!([{ email: 'foo1@bar.com',
+                       first_name: 'John',
+                       last_name: 'Doe'},
+                     { email: 'foo2@bar.com',
+                        first_name: 'Jane',
+                       last_name: 'Doe' }])
 
-UserTest.create([{ user_id: 1, test_id: 1 },
-                 { user_id: 1, test_id: 2 },
-                 { user_id: 1, test_id: 3 }])
+UserTest.create!([{ user_id: users[0].id, test_id: tests[0].id },
+                  { user_id: users[0].id, test_id: tests[1].id },
+                  { user_id: users[0].id, test_id: tests[2].id }])
