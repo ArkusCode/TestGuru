@@ -14,8 +14,8 @@ class Test < ApplicationRecord
 
   def self.tests_by_category(category)
     joins(:category)
-    .where(categories: { title: category })
-    .order(title: :desc, level: :asc)
-    .pluck(:title)
+      .where(categories: { title: category })
+      .order(title: :desc, level: :asc)
+      .pluck(:title)
   end
 end
