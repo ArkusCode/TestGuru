@@ -17,10 +17,12 @@ class QuestionsController < ApplicationController
 
   def create
     @test.questions.create(question_params)
+    render inline: '<h1>Created</h1>'
   end
 
   def destroy
     @question.destroy
+    render inline: '<h1>Deleted</h1>'
   end
 
   private
