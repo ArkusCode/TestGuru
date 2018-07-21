@@ -1,0 +1,12 @@
+<h1> Test completed </h1>
+<% if @user_test.good? %>
+  <p class="green">
+  <%= results_msg(@user_test)%>, the test is successful
+  </p>
+<% else %>
+  <p class="red">
+  <%= results_msg(@user_test)%>, the test failed
+  </p>
+<% end %>
+
+<%= link_to 'Back to tests', root_path %>

@@ -34,7 +34,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    render inline: '<h1>Deleted</h1>'
+    redirect_to @question.test
   end
 
   private

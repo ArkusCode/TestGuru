@@ -1,4 +1,11 @@
-<h1><%= "#{@test.title} #{test_level(@test)} test"%></h1>
-<p><%= render @test.questions %></p>
-<%= link_to 'New question', new_test_question_path(test_id: params[:id])%><br>
+<h1><%= "#{@test.title} #{test_level(@test)} test" %></h1>
+
+<%= link_to 'New question', new_test_question_path(@test) %>
+
+<h2> Questions <h2>
+
+<ol>
+  <%= render @test.questions %>
+</ol>
+
 <%= link_to 'Back', tests_path %>
