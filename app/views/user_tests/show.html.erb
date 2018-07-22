@@ -1,7 +1,7 @@
 <h1> Passing the <%= @user_test.test.title; test_level(@user_test.test) %> Test</h1>
 
 <p>
-  <h3> Question <%= @user_test.current_question_num %> of <%= @user_test.questions_count %></h3>
+  <h3> Question <%= @user_test.current_question_number %> of <%= @user_test.test.questions.count %></h3>
 </p>
 <b>
   <%= @user_test.current_question.body %>

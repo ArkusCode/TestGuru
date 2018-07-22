@@ -3,55 +3,43 @@ class UserTest < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_save :before_save_set_first_or_next_question
+  before_save :before_save_set_next_question
 
   def completed?
     current_question.nil?
   end
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
+    self.correct_questions += 1 if correct_answer?(answer_ids)
 
     save!
   end
 
-  def questions_count
-    test.questions.count
-  end
-
-  def current_question_num
-    test.questions.index(self.current_question) + 1
+  def current_question_number
+    test.questions.order(:id).where('id < ?', current_question.id).count + 1
   end
 
   def results
-    (self.correct_questions.to_f / questions_count) * 100
+    (self.correct_questions.to_f / self.test.questions.count ) * 100
   end
 
-  def good?
-    results >= 85 ? true : false
+  def success?
+    results >= 85
   end
 
   private
 
-  def before_save_set_first_or_next_question
-    if current_question.nil?
-      self.current_question = test.questions.first
-    else
-      self.current_question = next_question
-    end
+  def before_save_set_next_question
+    self.current_question =
+      if current_question.nil?
+        test.questions.first
+      else
+        next_question
+      end
   end
 
   def correct_answer?(answer_ids)
-    correct_answers_count = correct_answers.count
-    if answer_ids.nil?
-      false
-    else
-      correct_answers.ids.sort == answer_ids.map(&:to_i).sort
-    end
-#    (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-#    correct_answers_count == answer_ids.count
+    correct_answers.ids.sort == Array(answer_ids).map(&:to_i).sort
   end
 
   def correct_answers

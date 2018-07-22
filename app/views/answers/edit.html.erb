@@ -4,5 +4,5 @@
   <%= @answer.question.body %>
 </p>
 
-<%= render 'form' %>
+<%= render 'form', question: @question, answer: @answer %>
 <%= link_to 'Back', question_path(@answer.question) %>
