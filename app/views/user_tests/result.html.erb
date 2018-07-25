@@ -1,5 +1,4 @@
 <h1> Test completed </h1>
-<%= render 'result_message', color: result_markup(@user_test).color, outcome: result_markup(@user_test).outcome,
-  results: @user_test.results %>
+<%= render 'result_message', results: @user_test.results, outcome: result_outcome(@user_test).values %>
 
 <%= link_to 'Back to tests', root_path %>

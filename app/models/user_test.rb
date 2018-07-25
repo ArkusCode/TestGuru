@@ -30,12 +30,7 @@ class UserTest < ApplicationRecord
   private
 
   def before_save_set_next_question
-    self.current_question =
-      if current_question.nil?
-        test.questions.first
-      else
-        next_question
-      end
+    self.current_question = next_question
   end
 
   def correct_answer?(answer_ids)
@@ -47,6 +42,10 @@ class UserTest < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    if current_question.nil?
+      test.questions.first
+    else
+      test.questions.order(:id).where('id > ?', current_question.id).first
+    end
   end
 end

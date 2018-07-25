@@ -1,10 +1,11 @@
 module UserTestsHelper
-  def result_markup(user_test)
-  result = Struct.new(:color, :outcome)
+Result = Struct.new(:color, :outcome)
+
+  def result_outcome(user_test)
     if user_test.success?
-      result.new(:green, :successful)
+      Result.new(:green, :successful)
     else
-      result.new(:red, :failed)
+      Result.new(:red, :failed)
     end
   end
 end
