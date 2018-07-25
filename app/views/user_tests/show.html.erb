@@ -1,0 +1,19 @@
+<h1> Passing the <%= @user_test.test.title; test_level(@user_test.test) %> Test</h1>
+
+<p>
+  <h3> Question <%= @user_test.current_question_number %> of <%= @user_test.test.questions.count %></h3>
+</p>
+<b>
+  <%= @user_test.current_question.body %>
+</b>
+
+<%= form_with url: user_test_path(@user_test), local: true, method: :put do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @user_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+  <% end %>
+
+  <p><%= form.submit 'Next' %></p>
+<% end %>
