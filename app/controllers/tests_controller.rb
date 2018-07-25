@@ -1,4 +1,5 @@
 class TestsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :find_test, only: %i[show start]
   before_action :find_user, only: :start
 
@@ -17,7 +18,7 @@ class TestsController < ApplicationController
   private
 
   def find_user
-    @user = User.last
+    @user = current_user
   end
 
   def find_test
