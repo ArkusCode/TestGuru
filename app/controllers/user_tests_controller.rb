@@ -1,4 +1,4 @@
-class UserTestsController < ApplicationController
+class UserTestsController < AuthenticatedController
   before_action :find_user_test, only: %i[show update result]
 
   def show

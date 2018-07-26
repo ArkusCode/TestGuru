@@ -10,9 +10,8 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: name %>
-    <% end %>
+    <%= render 'shared/user_dashboard' %>
+    <%= render 'shared/flash_message' %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>

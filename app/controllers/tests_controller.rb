@@ -1,6 +1,6 @@
-class TestsController < ApplicationController
+class TestsController < AuthenticatedController
+  skip_before_action :authenticate_user!, only: :index
   before_action :find_test, only: %i[show start]
-  before_action :find_user, only: :start
 
   def index
     @tests = Test.all
@@ -10,15 +10,12 @@ class TestsController < ApplicationController
   end
 
   def start
+    @user = current_user
     @user.tests.push(@test)
     redirect_to @user.user_test(@test)
   end
 
   private
-
-  def find_user
-    @user = User.last
-  end
 
   def find_test
     @test = Test.find(params[:id])

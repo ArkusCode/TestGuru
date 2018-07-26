@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class QuestionsController < AuthenticatedController
   before_action :find_test, only: %i[index create new]
   before_action :find_question, only: %i[show destroy edit update]
 
