@@ -1,14 +1,12 @@
 class User < ApplicationRecord
 
-  EMAIL_FORMAT = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id
   has_many :user_tests
   has_many :tests, through: :user_tests
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :email, uniqueness: true, format: { with: EMAIL_FORMAT, message: "bad format" }
+  validates :email, uniqueness: true, format: { with: /@/, message: "bad format" }
 
   has_secure_password
 

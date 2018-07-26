@@ -11,9 +11,7 @@
 
   <body>
     <%= render 'shared/user_dashboard' %>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :p, msg, class: "flash #{name}" %>
-    <% end %>
+    <%= render 'shared/flash_message' %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
