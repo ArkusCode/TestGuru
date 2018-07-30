@@ -1,15 +1,21 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_permitted_params, if: :devise_controller?
 
-  helper_method :current_user,
-                :logged_in?
+  protected
 
-  private
+  def after_sign_in_path_for(resourse)
+    flash[:notice] = "Welcome, #{current_user.first_name}!"
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+    if current_user.is_a?(Admin)
+      admin_tests_path
+    else
+      root_path
+    end
   end
 
-  def logged_in?
-    current_user.present?
+  def configure_permitted_params
+    permitted_params = %i(first_name last_name)
+
+    devise_parameter_sanitizer.permit(:sign_up, keys: permitted_params)
   end
 end
