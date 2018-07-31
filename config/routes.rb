@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'tests#index'
 
-  devise_for :users
+  devise_for :users, controllers: { sessions: "sessions" }
 
   resources :tests, only: :index do
     post :start, on: :member

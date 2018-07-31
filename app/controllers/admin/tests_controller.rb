@@ -1,5 +1,5 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :find_test, only: %i[show edit update destroy start]
+  before_action :find_test, only: %i[show edit update destroy]
 
   def index
     @tests = Test.all
@@ -36,11 +36,6 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
     redirect_to admin_tests_path, notice: "Test was successfully deleted!"
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.user_test(@test)
   end
 
   private

@@ -3,10 +3,8 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def after_sign_in_path_for(resourse)
-    flash[:notice] = "Welcome, #{current_user.first_name}!"
-
-    if current_user.is_a?(Admin)
+  def after_sign_in_path_for(user)
+    if current_user.admin?
       admin_tests_path
     else
       root_path

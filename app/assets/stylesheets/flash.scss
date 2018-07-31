@@ -1,7 +1,9 @@
 .flash {
+  width: auto;
   border: 2px solid;
   padding: 10px;
   border-radius: 5px;
+  max-width: auto;
 }
 
 .flash.notice {
