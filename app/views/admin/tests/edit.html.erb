@@ -1,4 +1,4 @@
-<h1>Edit <%= @test.title %> test</h1>
+<h1><%= "#{@test.title} #{t('test').downcase}" %></h1>
 
 <%= render 'form', test: @test %>
-<%= link_to 'Back', admin_tests_path %>
+<%= link_to t('admin.back_link'), admin_tests_path %>

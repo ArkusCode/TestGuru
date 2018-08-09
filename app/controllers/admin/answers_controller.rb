@@ -16,7 +16,7 @@ class Admin::AnswersController < Admin::BaseController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to admin_question_path(@answer.question)
+      redirect_to admin_question_path(@answer.question), notice: t('admin.created', resourse: @answer.model_name.human)
     else
       render :new
     end
@@ -32,7 +32,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def destroy
     @answer.destroy
-    redirect_to admin_question_path(@answer.question), notice: "Answer was successfully deleted!"
+    redirect_to admin_question_path(@answer.question), notice: t('admin.deleted', resourse: @answer.model_name.human)
   end
 
   private

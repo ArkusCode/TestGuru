@@ -19,7 +19,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.created_tests.new(test_params)
 
     if @test.save
-      redirect_to admin_test_path(@test)
+      redirect_to admin_test_path(@test), notice: t('admin.created', resourse: @test.model_name.human)
     else
       render :new
     end
@@ -35,7 +35,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    redirect_to admin_tests_path, notice: "Test was successfully deleted!"
+    redirect_to admin_tests_path, notice: t('admin.deleted', resourse: @test.model_name.human)
   end
 
   private

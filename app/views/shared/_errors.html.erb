@@ -1,6 +1,8 @@
 <% if resourse.errors.present? %>
   <div>
-    <h2><%= pluralize(resourse.errors.count, 'error') %> detected: </h2>
+    <h2>
+      <%= t('.header', count: resourse.errors.count) %>:
+    </h2>
 
     <ul>
       <% resourse.errors.full_messages.each do |message| %>

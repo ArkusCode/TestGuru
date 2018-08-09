@@ -18,7 +18,7 @@ class Admin::QuestionsController < Admin::BaseController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to admin_test_path(@test)
+      redirect_to admin_test_path(@test), notice: t('admin.created', resourse: @question.model_name.human)
     else
       render :new
     end
@@ -34,13 +34,13 @@ class Admin::QuestionsController < Admin::BaseController
 
   def destroy
     @question.destroy
-    redirect_to admin_test_path(@question.test), notice: "Question was successfully deleted!"
+    redirect_to admin_test_path(@question.test), notice: t('admin.deleted', resourse: @question.model_name.human)
   end
 
   private
 
   def rescue_from_question_not_found
-    render plain: 'Request not found'
+    render plain: t('.not_found')
   end
 
   def find_test

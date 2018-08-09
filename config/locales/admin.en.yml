@@ -1,0 +1,33 @@
+en:
+  admin:
+    show_link: "Show"
+    edit_link: "Edit"
+    delete_link: "Delete"
+    back_link: "Back"
+    confirm: "Are you sure?"
+    created: "%{resourse} created."
+    deleted: "%{resourse} deleted."
+    forbidden: "You are not authorized to view this page."
+    nav:
+      welcome: "Welcome"
+    tests:
+      index:
+        test_title: "Title"
+        test_level: "Level"
+        test_actions: "Actions"
+        test_questions: "Questions"
+        new_test: "New test"
+        header: "Availiable test"
+      show:
+        new_question: "New question"
+      new:
+        new_test: "New test"
+    questions:
+      new:
+        new_question: "New question"
+      show:
+        new_answer: "New answer"
+        not_found: "404 - Request not found"
+    answers:
+      new:
+        new_answer: "New answer"
