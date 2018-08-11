@@ -1,0 +1,64 @@
+ru:
+  hello: "Привет мир"
+
+  question: "Вопрос"
+  answer: "Ответ"
+  answers: "Ответы"
+  questions: "Вопросы"
+  test: "Тест"
+  correct_answer: "Правильный ответ"
+
+  tests:
+    index:
+      header: "Доступные Тесты"
+      test_title: "Название"
+      test_level: "Уровень"
+      test_actions: "Действия"
+      test_questions: "Вопросы"
+    test:
+      start: "Начать"
+
+  sessions:
+    create:
+      welcome: "Привет %{user}!"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+  shared:
+    user_dashboard:
+      unauthorized_user: "Войти в обитель Гуру"
+      logout: "Выйти"
+      signin: "Войти"
+      signup: "Регистрация"
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  user_tests:
+    show:
+      header: "Проходим"
+      question_counter: "Вопрос %{current_question} из %{questions_count}"
+      next: "Следующий"
+    result:
+      header: "Тест %{title} успешно завершен!"
+      back: "Назад к тестам"
+    result_message:
+      message: "Вы ответили правильно на %{result}% вопросов, тест"
+      failed: " не пройден!"
+      successful: " пройден!"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"

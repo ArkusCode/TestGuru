@@ -1,0 +1,33 @@
+ru:
+  admin:
+    show_link: "Показать"
+    edit_link: "Редактировать"
+    delete_link: "Удалить"
+    back_link: "Назад"
+    confirm: "Подтвердить удаление?"
+    created: "%{resourse} успешно создан."
+    deleted: "%{resourse} успешно удален."
+    forbidden: "У Вас нет прав для этого. Обратитесь к администратору."
+    nav:
+      welcome: "Добро пожаловать"
+    tests:
+      index:
+        test_title: "Название"
+        test_level: "Уровень"
+        test_actions: "Действия"
+        test_questions: "Вопросы"
+        new_test: "Создать тест"
+        header: "Доступные Тесты"
+      show:
+        new_question: "Добавить вопрос"
+      new:
+        new_test: "Новый тест"
+    questions:
+      new:
+        new_question: "Новый вопрос"
+      show:
+        new_answer: "Добавить ответ"
+        not_found: "404 - Запрашиваемый ресурс не найден"
+    answers:
+      new:
+        new_answer: "Новый ответ"

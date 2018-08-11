@@ -1,3 +1,3 @@
 <p class="<%= outcome[0] %>">
-  You answered correctly on <%= results %>% of the questions, the test is <%= outcome[1] %>!
+  <%= t('.message', result: results) %><%= outcome[1].eql?(:failed) ? t('.failed') : t('.successful') %>
 </p>

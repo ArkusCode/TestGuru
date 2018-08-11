@@ -1,11 +1,11 @@
-<h1>Welcome to TestGuru!</h1>
+<h1><%= t('.header') %></h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Level</th>
-    <th>Questions</th>
-    <th><%= 'Actions' if user_signed_in? %></th>
+    <th><%= t('.test_title') %></th>
+    <th><%= t('.test_level') %></th>
+    <th><%= t('.test_questions') %></th>
+    <th><%= t('.test_actions') if user_signed_in? %></th>
   </tr>
 
   <%= render @tests %>

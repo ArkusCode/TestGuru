@@ -1,8 +1,9 @@
-<h1>New Answer</h1>
+<h1><%= t('.new_answer') %></h1>
 
 <p>
+  <b><%= t('question')%>:</b>
   <%= @question.body %>
 </p>
 
 <%= render 'form', question: @question, answer: @answer %>
-<%= link_to 'Back', admin_question_path(@question) %>
+<%= link_to t('admin.back_link'), admin_question_path(@question) %>
