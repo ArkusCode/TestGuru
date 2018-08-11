@@ -1,16 +1,17 @@
-<h1><%= t('.header') %></h1>
+<h1 class="text-center font-weight-normal"><%= t('.header') %></h1>
+<div class="row mt-3">
+  <p>
+    <%= link_to t('.new_test'), new_admin_test_path %>
+  </p>
 
-<p>
-  <%= link_to t('.new_test'), new_admin_test_path %>
-</p>
+  <table class="table table-hover table-bordered">
+    <tr class="table-primary">
+      <th><%= t('.test_title') %></th>
+      <th><%= t('.test_level') %></th>
+      <th><%= t('.test_questions') %></th>
+      <th colspan="3" class="text-center"><%= t('.test_actions') %></th>
+    </tr>
 
-<table>
-  <tr>
-    <th><%= t('.test_title') %></th>
-    <th><%= t('.test_level') %></th>
-    <th><%= t('.test_questions') %></th>
-    <th colspan="3"><%= t('.test_actions') %></th>
-  </tr>
-
-  <%= render @tests %>
-</table>
+    <%= render @tests %>
+  </table>
+</div>

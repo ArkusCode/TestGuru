@@ -1,11 +1,11 @@
 <p>
-  <b><%= t('question') %>:</b>
+  <b><%= t('caption.question') %>:</b>
   <%= @question.body %>
 </p>
 
 <%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
 
-<h2><%= t('answers') %>:<h2>
+<h2><%= t('caption.answers') %>:<h2>
 
 <ol>
   <%= render @question.answers %>

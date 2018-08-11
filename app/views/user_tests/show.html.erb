@@ -1,17 +1,19 @@
-<h1><%= t('.header') %><%= " #{@user_test.test.title} #{test_level(@user_test.test)} " %><%= t('test').downcase %></h1>
+<h1><%= t('.header') %><%= " #{@user_test.test.title} #{test_level(@user_test.test)} " %><%= t('caption.test').downcase %></h1>
 
 <h3><%= t('.question_counter', current_question: @user_test.current_question_number, questions_count: @user_test.test.questions.count) %></h3>
-<p>
-  <b><%= @user_test.current_question.body %></b>
-</p>
+<div class="border rounded p-3">
+  <p>
+    <b><%= @user_test.current_question.body %></b>
+  </p>
 
-<%= form_with url: user_test_path(@user_test), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @user_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.label %>
-    </p>
+  <%= form_with url: user_test_path(@user_test), local: true, method: :put do |form| %>
+    <%= form.collection_check_boxes :answer_ids, @user_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
+      <p>
+        <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+        <%= b.label %>
+      </p>
+    <% end %>
+
+    <p><%= form.submit t('.next'), class: "btn btn-outline-dark" %></p>
   <% end %>
-
-  <p><%= form.submit t('.next') %></p>
-<% end %>
+</div>

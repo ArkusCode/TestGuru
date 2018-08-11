@@ -2,5 +2,5 @@
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.count %></td>
-  <td><%= button_to t('.start'), start_test_path(test) if user_signed_in? %></td>
+  <td><%= button_to t('.start'), start_test_path(test), class: "btn btn-outline-dark btn-sm" if user_signed_in? %></td>
 </tr>

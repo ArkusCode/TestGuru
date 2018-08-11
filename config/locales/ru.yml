@@ -1,12 +1,13 @@
 ru:
   hello: "Привет мир"
 
-  question: "Вопрос"
-  answer: "Ответ"
-  answers: "Ответы"
-  questions: "Вопросы"
-  test: "Тест"
-  correct_answer: "Правильный ответ"
+  caption:
+    question: "Вопрос"
+    answer: "Ответ"
+    answers: "Ответы"
+    questions: "Вопросы"
+    test: "Тест"
+    correct_answer: "Правильный ответ"
 
   tests:
     index:
@@ -34,7 +35,8 @@ ru:
         category_id: "Категория"
 
   shared:
-    user_dashboard:
+    nav:
+      admin_nav: "Управление"
       unauthorized_user: "Войти в обитель Гуру"
       logout: "Выйти"
       signin: "Войти"

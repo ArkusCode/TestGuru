@@ -1,12 +1,13 @@
 en:
   hello: "Hello world"
 
-  question: "Question"
-  answer: "Answer"
-  answers: "Answers"
-  questions: "Questions"
-  test: "Test"
-  correct_answer: "Correct"
+  caption:
+    question: "Question"
+    answer: "Answer"
+    answers: "Answers"
+    questions: "Questions"
+    test: "Test"
+    correct_answer: "Correct"
 
   tests:
     index:
@@ -34,7 +35,8 @@ en:
         category_id: "Category"
 
   shared:
-    user_dashboard:
+    nav:
+      admin_nav: "Control Panel"
       unauthorized_user: "Enter The Guru Gate"
       logout: "Logout"
       signin: "SignIn"

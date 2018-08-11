@@ -9,6 +9,7 @@ en:
     deleted: "%{resourse} deleted."
     forbidden: "You are not authorized to view this page."
     nav:
+      logout: "Logout"
       welcome: "Welcome"
     tests:
       index:

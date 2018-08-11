@@ -4,8 +4,8 @@ ru:
       links:
         log_in: "Войти"
         sign_up: "Регистрация"
-        forgot?: "Забыл пароль"
-        confirmation_instructions?: "Не получил инструкции по подтверждению эл. адреса"
+        forgot?: "Забыл пароль?"
+        confirmation_instructions?: "Проблемы с подтверждением эл. адреса?"
         unlock_instructions?: "Не получил инструкции по разблокировке"
     confirmations:
       confirmed: "Ваша учётная запись успешно подтверждена."
@@ -54,6 +54,7 @@ ru:
       updated: "Ваша учётная запись успешно изменена."
     sessions:
       new:
+        remember_me: "Запомнить"
         header: "Вход в обитель Гуру"
         enter: "Войти"
       signed_in: "Вход в систему выполнен."
