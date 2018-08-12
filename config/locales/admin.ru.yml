@@ -9,6 +9,7 @@ ru:
     deleted: "%{resourse} успешно удален."
     forbidden: "У Вас нет прав для этого. Обратитесь к администратору."
     nav:
+      logout: "Выход"
       welcome: "Добро пожаловать"
     tests:
       index:
