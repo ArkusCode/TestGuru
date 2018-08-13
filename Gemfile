@@ -39,6 +39,14 @@ gem 'devise', '~> 4.0'
 
 gem 'rails-i18n', '~> 5.0.0'
 
+#NETWORKING
+
+gem 'faraday'
+
+#API
+
+gem 'octokit', '~> 4.0'
+
 # UI
 
 gem 'jquery-rails'
@@ -50,6 +58,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
 end
 
 group :development do

@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id
   has_many :user_tests
   has_many :tests, through: :user_tests
+  has_many :gists
 
   validates :first_name, presence: true
   validates :last_name, presence: true
