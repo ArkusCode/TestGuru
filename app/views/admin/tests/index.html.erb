@@ -1,7 +1,7 @@
 <h1 class="text-center font-weight-normal"><%= t('.header') %></h1>
 <div class="row mt-3">
   <p>
-    <%= link_to t('.new_test'), new_admin_test_path %>
+    <%= link_to t('.new_test'), new_admin_test_path, class: 'badge badge-secondary' %>
   </p>
 
   <table class="table table-hover table-bordered">
@@ -14,4 +14,7 @@
 
     <%= render @tests %>
   </table>
+  <p>
+    <%= link_to 'Gists', admin_gists_path, class: 'badge badge-secondary' %>
+  </p>
 </div>

@@ -1,6 +1,8 @@
 ru:
   hello: "Привет мир"
 
+  gist: "Вопрос из теста %{test_title} проекта TestGuru"
+
   caption:
     question: "Вопрос"
     answer: "Ответ"
@@ -53,6 +55,9 @@ ru:
       header: "Проходим"
       question_counter: "Вопрос %{current_question} из %{questions_count}"
       next: "Следующий"
+    gist:
+      success: "Gist успешно сохранен! %{url}"
+      failure: "Во время сохранения gist произошла ошибка"
     result:
       header: "Тест %{title} успешно завершен!"
       back: "Назад к тестам"

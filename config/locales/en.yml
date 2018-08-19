@@ -1,6 +1,8 @@
 en:
   hello: "Hello world"
 
+  gist: "A question about %{test_title} from TestGuru"
+
   caption:
     question: "Question"
     answer: "Answer"
@@ -51,6 +53,9 @@ en:
       header: "Passing"
       question_counter: "Question %{current_question} of %{questions_count}"
       next: "Next"
+    gist:
+      success: "Gist was successfully created! %{url}"
+      failure: "An error occurred while saving gist"
     result:
       header: "The %{title} Test was Completed!"
       back: "Back to tests"

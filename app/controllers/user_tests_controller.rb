@@ -1,5 +1,5 @@
 class UserTestsController < AuthenticatedController
-  before_action :find_user_test, only: %i[show update result]
+  before_action :find_user_test, only: %i[show update result gist]
 
   def show
   end
@@ -18,9 +18,26 @@ class UserTestsController < AuthenticatedController
     end
   end
 
+  def gist
+    result = GistQuestionService.new(@user_test.current_question).call
+
+    flash_options = if result&.html_url.present?
+      create_gist!(result.html_url)
+      { notice: t('.success', url: view_context.link_to("gist.github.com", result.html_url, target: :blank)) }
+    else
+      { notice: t('.failure') }
+    end
+
+    redirect_to @user_test, flash_options
+  end
+
   private
 
   def find_user_test
     @user_test = UserTest.find(params[:id])
+  end
+
+  def create_gist!(url)
+    current_user.gists.create!(question: @user_test.current_question, url: url)
   end
 end
