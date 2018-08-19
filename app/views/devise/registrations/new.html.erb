@@ -1,36 +1,54 @@
-<h2><%= t('.header') %></h2>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-5">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <h2><%= t('.header') %></h2>
 
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, id: :user_first_name %>
+    <div class="card border-primary">
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="form-group">
+
+          <p>
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, id: :user_first_name, class: 'form-control',
+            placeholder: t('.first_name_placeholder') %>
+          </p>
+
+          <p>
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, id: :user_last_name, class: 'form-control',
+            placeholder: t('.last_name_placeholder') %>
+          </p>
+
+          <p>
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control',
+            placeholder: 'example@gmail.com' %>
+          </p>
+
+          <p>
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "off", class: 'password form-control' %>
+          </p>
+
+          <p>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'confirmation form-control' %>
+            <span id='message'></span>
+          </p>
+
+          <p>
+            <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
+          </p>
+        <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-1">
+      <%= render "devise/shared/links" %>
+    </div>
+
   </div>
-
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, id: :user_last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit t('.sign_up') %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
