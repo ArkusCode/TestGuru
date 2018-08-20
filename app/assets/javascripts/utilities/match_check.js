@@ -10,7 +10,7 @@ document.addEventListener('turbolinks:load', function() {
 
 function checkMatching() {
   if (document.getElementById('user_password').value ==
-    document.getElementById('user_password_confirmation').value) {
+      document.getElementById('user_password_confirmation').value) {
     document.getElementById('message').style.color = 'green';
     document.getElementById('message').innerHTML = 'matching';
   } else {
@@ -18,4 +18,3 @@ function checkMatching() {
     document.getElementById('message').innerHTML = 'not matching';
     }
 }
-
