@@ -1,4 +1,6 @@
-<h1><%= t('.new_test') %></h1>
+<div class="mt-3">
+  <h1><%= t('.new_test') %></h1>
 
-<%= render 'form', test: @test %>
-<%= link_to t('admin.back_link'), admin_tests_path %>
+  <%= render 'form', test: @test %>
+  <%= link_to t('admin.back_link'), admin_tests_path %>
+</div>

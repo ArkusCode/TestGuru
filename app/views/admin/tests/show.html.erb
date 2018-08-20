@@ -1,12 +1,14 @@
-<h1><%= "#{@test.title} #{t('test').downcase}." %></h1>
+<div class="mt-3">
+  <h1><%= "#{@test.title} #{t('caption.test').downcase}." %></h1>
 
-<%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
+  <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
 
-<h2><%= t('questions') %>:<h2>
+  <h2><%= t('questions') %>:</h2>
 
-<ol>
-  <%= render @test.questions %>
-</ol>
+  <ol>
+    <%= render @test.questions %>
+  </ol>
 
-<%= link_to t('admin.edit_link'), edit_admin_test_path(@test) %> |
-<%= link_to t('admin.back_link'), admin_tests_path %>
+  <%= link_to t('admin.edit_link'), edit_admin_test_path(@test) %> |
+  <%= link_to t('admin.back_link'), admin_tests_path %>
+</div>

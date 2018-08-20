@@ -2,7 +2,10 @@
 <div class="row mt-3">
   <table class="table table-hover table-bordered">
     <tr class="table-primary">
-      <th><%= t('.test_title') %></th>
+      <th class="sort-by-title pointer">
+        <%= t('.test_title') %>
+        <%= octicon 'arrow-up', class: 'text-success hide' %>
+        <%= octicon 'arrow-down', class: 'text-success hide' %>
       <th><%= t('.test_level') %></th>
       <th><%= t('.test_questions') %></th>
       <th><%= t('.test_actions') if user_signed_in? %></th>
