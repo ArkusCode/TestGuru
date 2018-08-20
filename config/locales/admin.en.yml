@@ -1,5 +1,6 @@
 en:
   admin:
+    welcome: "Welcome"
     show_link: "Show"
     edit_link: "Edit"
     delete_link: "Delete"

@@ -1,5 +1,6 @@
 ru:
   admin:
+    welcome: "Добро пожаловать"
     show_link: "Показать"
     edit_link: "Редактировать"
     delete_link: "Удалить"
