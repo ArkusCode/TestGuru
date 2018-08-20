@@ -1,5 +1,7 @@
 class GistQuestionService
 
+  ResultObject = Struct.new(:success?, :data)
+
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
@@ -7,14 +9,15 @@ class GistQuestionService
   end
 
   def call
-    @client.create_gist(gist_params)
+    gist = @client.create_gist(gist_params)
+    ResultObject.new(gist&.html_url.present?, gist)
   end
 
   private
 
   def gist_params
     {
-      description: I18n.t('.gist', test_title: @test.title),
+      description: I18n.t('services.gist', test_title: @test.title),
       files: {
         'test-guru-questions.txt' => {
           content: gist_content
@@ -24,8 +27,6 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.body]
-    content += @question.answers.pluck(:body)
-    content.join("\n")
+    [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
 end

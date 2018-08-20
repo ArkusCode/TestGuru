@@ -3,7 +3,7 @@
 
   <span class="navbar-text">
     <% if user_signed_in? %>
-      <%= t('admin.welcome') %>,<b><%= current_user.first_name %></b> |
+      <%= t('admin.welcome') %>, <b><%= current_user.first_name %></b> |
       <%= link_to t('.admin_nav'), admin_tests_path if current_user&.admin? %> |
       <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
     <% else %>

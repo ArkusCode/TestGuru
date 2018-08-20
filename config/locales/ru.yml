@@ -1,7 +1,8 @@
 ru:
   hello: "Привет мир"
 
-  gist: "Вопрос из теста %{test_title} проекта TestGuru"
+  services:
+    gist: "Вопрос из теста %{test_title} проекта TestGuru"
 
   caption:
     question: "Вопрос"

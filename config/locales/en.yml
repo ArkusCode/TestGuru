@@ -1,7 +1,8 @@
 en:
   hello: "Hello world"
 
-  gist: "A question about %{test_title} from TestGuru"
+  services:
+    gist: "A question about %{test_title} from TestGuru"
 
   caption:
     question: "Question"

@@ -21,9 +21,9 @@ class UserTestsController < AuthenticatedController
   def gist
     result = GistQuestionService.new(@user_test.current_question).call
 
-    flash_options = if result&.html_url.present?
-      create_gist!(result.html_url)
-      { notice: t('.success', url: view_context.link_to("gist.github.com", result.html_url, target: :blank)) }
+    flash_options = if result.success?
+      current_user.gists.create!(question: @user_test.current_question, url: result.data.html_url)
+      { notice: t('.success', url: view_context.link_to("gist.github.com", result.data.html_url, target: :blank)) }
     else
       { notice: t('.failure') }
     end
@@ -35,9 +35,5 @@ class UserTestsController < AuthenticatedController
 
   def find_user_test
     @user_test = UserTest.find(params[:id])
-  end
-
-  def create_gist!(url)
-    current_user.gists.create!(question: @user_test.current_question, url: url)
   end
 end
