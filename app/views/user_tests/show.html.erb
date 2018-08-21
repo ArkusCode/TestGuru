@@ -1,7 +1,11 @@
 <h1><%= t('.header') %><%= " #{@user_test.test.title} #{test_level(@user_test.test)} " %><%= t('caption.test').downcase %></h1>
 
-<h3><%= t('.question_counter', current_question: @user_test.current_question_number, questions_count: @user_test.test.questions.count) %></h3>
-<div class="border rounded p-3">
+<div class="progress">
+  <%= content_tag :div, t('.question_counter', current_question: @user_test.current_question_number,
+                  questions_count: @user_test.test.questions.count), class: 'progress-bar progress-bar-danger',
+                  role: 'progressbar', data: { width: @user_test.percent_completed } %>
+</div>
+<div class="border rounded p-3 mt-3">
   <p>
     <b><%= @user_test.current_question.body %></b>
   </p>

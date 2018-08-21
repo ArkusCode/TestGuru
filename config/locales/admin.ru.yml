@@ -13,6 +13,8 @@ ru:
       logout: "Выход"
       welcome: "Добро пожаловать"
     tests:
+      form_inline:
+        submit: "ОК"
       index:
         test_title: "Название"
         test_level: "Уровень"
