@@ -13,6 +13,8 @@ en:
       logout: "Logout"
       welcome: "Welcome"
     tests:
+      form_inline:
+        submit: "OK"
       index:
         test_title: "Title"
         test_level: "Level"

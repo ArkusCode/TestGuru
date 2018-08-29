@@ -20,11 +20,15 @@ class UserTest < ApplicationRecord
   end
 
   def results
-    (self.correct_questions.to_f / self.test.questions.count ) * 100
+    (self.correct_questions.to_f / self.test.questions.count) * 100
   end
 
   def success?
     results >= 85
+  end
+
+  def percent_completed
+    (current_question_number.to_f / self.test.questions.count) * 100
   end
 
   private
