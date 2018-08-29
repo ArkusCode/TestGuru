@@ -1,4 +1,6 @@
-<h1><%= t('.header') %><%= " #{@user_test.test.title} #{test_level(@user_test.test)} " %><%= t('caption.test').downcase %></h1>
+<h1 class="font-weight-normal mt-3">
+  <%= t('.header') %> "<%= @user_test.test.title %>" <%= t('caption.test').downcase %>.
+</h1>
 
 <div class="progress">
   <%= content_tag :div, t('.question_counter', current_question: @user_test.current_question_number,
