@@ -6,8 +6,4 @@ class TestsMailer < ApplicationMailer
 
     mail to: @user.email
   end
-
-  def testmailer
-    mail to: 'arkuscode@gmail.com'
-  end
 end
