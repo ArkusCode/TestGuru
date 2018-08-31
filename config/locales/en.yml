@@ -37,6 +37,15 @@ en:
         level: "Level"
         category_id: "Category"
 
+  feedbacks:
+    new:
+      new_feedback: "Feedback"
+    form:
+      submit: "Send"
+      back: "Back"
+    create:
+      feedback_notice: "Your feedback successfully created!"
+
   shared:
     nav:
       admin_nav: "Control Panel"

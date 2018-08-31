@@ -4,6 +4,7 @@ ru:
       answer: "Ответ"
       question: "Вопрос"
       test: "Тест"
+      feedback: "Отзыв"
 
     attributes:
       test:
@@ -22,6 +23,9 @@ ru:
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         remember_me: "Запомнить"
+      feedback:
+        title: "Тема"
+        body: "Сообщение"
 
     errors:
       messages:

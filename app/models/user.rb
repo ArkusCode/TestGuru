@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :user_tests
   has_many :tests, through: :user_tests
   has_many :gists
+  has_many :feedbacks
 
   validates :first_name, presence: true
   validates :last_name, presence: true

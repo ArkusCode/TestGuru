@@ -1,0 +1,20 @@
+<div class="mt-3">
+  <%= form_with model: feedback, local: true do |form| %>
+    <div class="form-group">
+      <%= render 'shared/errors', resourse: feedback %>
+      <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title, id: :feedback_title, class: "form-control" %>
+      </p>
+
+      <p>
+        <%= form.label :body %><br>
+        <%= form.text_area :body, id: :feedback_body, rows: 7, cols: 60, class: "form-control" %>
+      </p>
+
+      <p><%= form.submit t('.submit'), class: 'btn btn-primary' %></p>
+    </div>
+  <% end %>
+
+  <%= link_to t('.back'), :back, class: 'badge badge-primary' %>
+</div>

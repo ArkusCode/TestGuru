@@ -37,6 +37,15 @@ ru:
         level: "Уровень"
         category_id: "Категория"
 
+  feedbacks:
+    new:
+      new_feedback: "Отзыв"
+    form:
+      submit: "Отправить"
+      back: "Назад"
+    create:
+      feedback_notice: "Ваш отзыв отправлен!"
+
   shared:
     nav:
       admin_nav: "Управление"

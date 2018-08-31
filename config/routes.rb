@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { sessions: "sessions" }
 
+  resources :feedbacks, only: %i[create new]
+
   resources :tests, only: :index do
     post :start, on: :member
   end
