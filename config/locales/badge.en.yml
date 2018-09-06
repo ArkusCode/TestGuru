@@ -1,0 +1,10 @@
+en:
+  badges:
+    index:
+      availiable_badges: "All availiable badges"
+      no_badges_yet: "You badges yet!"
+    show_all:
+      header: "Badges"
+      badge_icon: "Icon"
+      badge_name: "Rule"
+      back: "Back"

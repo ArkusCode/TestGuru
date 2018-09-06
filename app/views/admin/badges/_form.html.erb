@@ -1,0 +1,20 @@
+<%= form_with model: [:admin, badge], local: true do |form| %>
+  <%= render 'shared/errors', resourse: badge %>
+
+  <div class="field">
+    <%= form.label :title %><br>
+    <%= form.select(:title, options_for_select(Badge::BADGES_NAMES), {}) %>
+  </div>
+
+  <div>
+    <%= form.label :cover %><br>
+    <%= form.text_field :cover, id: :cover_id %>
+  </div>
+
+  <p>
+    <%= form.label :rule %><br>
+    <%= form.text_field :rule %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %>

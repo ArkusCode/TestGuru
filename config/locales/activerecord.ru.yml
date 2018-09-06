@@ -5,6 +5,7 @@ ru:
       question: "Вопрос"
       test: "Тест"
       feedback: "Отзыв"
+      badge: "Достижение"
 
     attributes:
       test:
@@ -26,6 +27,10 @@ ru:
       feedback:
         title: "Тема"
         body: "Сообщение"
+      badge:
+        title: "Название"
+        rule: "Правило"
+        cover: "Обложка"
 
     errors:
       messages:

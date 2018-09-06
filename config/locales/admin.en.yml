@@ -9,7 +9,20 @@ en:
     created: "%{resourse} created."
     deleted: "%{resourse} deleted."
     forbidden: "You are not authorized to view this page."
+    badges:
+      create:
+        create: "New badge successfully created"
+      new:
+        new_badge: "New Badge"
+      index:
+        header: "Badges"
+        back: "Back"
+        new_badge: "New Badge"
+        badge_icon: "Icon"
+        badge_name: "Rule"
+        badge_actions: "Actions"
     nav:
+      badges: "Badges"
       logout: "Logout"
       welcome: "Welcome"
     tests:

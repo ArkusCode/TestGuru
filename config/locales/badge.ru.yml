@@ -1,0 +1,10 @@
+ru:
+  badges:
+    index:
+      availiable_badges: "Все доступные достижения"
+      no_badges_yet: "У Вас пока нет достижений!"
+    show_all:
+      header: "Достижения"
+      badge_icon: "Вид"
+      badge_name: "Условия получения"
+      back: "Назад"

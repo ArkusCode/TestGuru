@@ -9,7 +9,20 @@ ru:
     created: "%{resourse} успешно создан."
     deleted: "%{resourse} успешно удален."
     forbidden: "У Вас нет прав для этого. Обратитесь к администратору."
+    badges:
+      create:
+        create: "Новое достижение успешно создано"
+      new:
+        new_badge: "Новое достижение"
+      index:
+        header: "Достижения"
+        back: "Назад"
+        new_badge: "Новое достижение"
+        badge_icon: "Вид"
+        badge_name: "Правило"
+        badge_actions: "Действия"
     nav:
+      badges: "Достижения"
       logout: "Выход"
       welcome: "Добро пожаловать"
     tests:

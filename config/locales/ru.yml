@@ -53,6 +53,7 @@ ru:
       logout: "Выйти"
       signin: "Войти"
       signup: "Регистрация"
+      badges: "Достижения"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
