@@ -53,6 +53,7 @@ en:
       logout: "Logout"
       signin: "SignIn"
       signup: "SignUp"
+      badges: "Badges"
     errors:
       header:
         one: "%{count} error detected"

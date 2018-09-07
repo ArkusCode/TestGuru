@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   resources :feedbacks, only: %i[create new]
 
+  resources :badges, only: :index
+  get 'show_all', to: 'badges#show_all'
+
   resources :tests, only: :index do
     post :start, on: :member
   end
@@ -27,5 +30,6 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+    resources :badges
   end
 end

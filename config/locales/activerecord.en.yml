@@ -4,6 +4,7 @@ en:
       answer: "Answer"
       question: "Question"
       test: "Test"
+      badge: "Badge"
 
     attributes:
       test:
@@ -25,6 +26,10 @@ en:
       feedback:
         title: "Title"
         body: "Body"
+      badge:
+        title: "Title"
+        rule: "Rule"
+        cover: "Cover"
 
     errors:
       messages:

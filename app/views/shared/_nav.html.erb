@@ -3,12 +3,13 @@
 
   <span class="navbar-text">
     <% if user_signed_in? %>
-      <%= t('admin.welcome') %>, <b><%= current_user.first_name %></b> |
-      <%= link_to t('.admin_nav'), admin_tests_path if current_user&.admin? %> |
-      <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
+      <%= t('admin.welcome') %>, <b><%= current_user.first_name %></b>
+      <%= link_to t('.badges'), badges_path, class: 'badge badge-primary' %>
+      <%= link_to t('.admin_nav'), admin_tests_path, class: 'badge badge-primary' if current_user&.admin? %>
+      <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'badge badge-primary' %>
     <% else %>
-      <%= link_to t('.signin'), new_user_session_path %> |
-      <%= link_to t('.signup'), new_user_registration_path %>
+      <%= link_to t('.signin'), new_user_session_path, class: 'badge badge-primary' %>
+      <%= link_to t('.signup'), new_user_registration_path, class: 'badge badge-primary' %>
     <% end %>
   </span>
 </nav>

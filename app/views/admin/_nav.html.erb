@@ -1,8 +1,9 @@
 <nav class="navbar">
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
-  <span>TestGuru Admin Panel</span>
+  <span class="float-center">TestGuru Admin Panel</span>
   <span class="navbar-text">
       <%= t('.welcome') %>, <b><%= current_user.first_name %></b> |
-      <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
+      <%= link_to t('.badges'), admin_badges_path, class: 'badge badge-primary' %> |
+      <%= link_to t('.logout'), destroy_user_session_path, class: 'badge badge-primary', method: :delete %>
   </span>
 </nav>

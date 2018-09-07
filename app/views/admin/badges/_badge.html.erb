@@ -1,0 +1,17 @@
+<tr>
+  <td class="align-middle"><img src=<%="#{badge.cover}"%>></td>
+  <td class="align-middle"><%= Badge::BADGES_NAMES.key(badge.title.to_sym) + " #{badge.rule}" %></td>
+  <td class="align-middle"><%= link_to t('admin.show_link'), admin_badge_path(badge), class: 'badge badge-primary' %></td>
+  <td class="align-middle">
+    <%= link_to t('admin.edit_link'),
+                edit_admin_badge_path(badge),
+                class: 'badge badge-primary' %>
+  </td>
+  <td class="align-middle">
+    <%= link_to t('admin.delete_link'),
+                admin_badge_path(badge),
+                class: 'badge badge-primary',
+                method: :delete,
+                data: { confirm: t('admin.confirm') } %>
+  </td>
+</tr>
