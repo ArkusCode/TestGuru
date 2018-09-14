@@ -19,7 +19,7 @@ class Test < ApplicationRecord
       .pluck(:title)
   end
 
-  def have_timer?
+  def timer?
     timer.positive?
   end
 end

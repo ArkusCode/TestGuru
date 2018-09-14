@@ -2,7 +2,7 @@
   <%= t('.header') %> "<%= @user_test.test.title %>" <%= t('caption.test').downcase %>.
 </h1>
 
-<% if @user_test.test.have_timer? %>
+<% if @user_test.test.timer? %>
   <%= content_tag :small, '0:00', class: 'timer', data: { time: @user_test.time_left, id: @user_test.id } %>
 <% end %>
 
