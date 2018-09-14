@@ -2,6 +2,10 @@
   <%= t('.header') %> "<%= @user_test.test.title %>" <%= t('caption.test').downcase %>.
 </h1>
 
+<% if @user_test.test.timer? %>
+  <%= content_tag :small, '0:00', class: 'timer', data: { time: @user_test.time_left, id: @user_test.id } %>
+<% end %>
+
 <div class="progress">
   <%= content_tag :div, t('.question_counter', current_question: @user_test.current_question_number,
                   questions_count: @user_test.test.questions.count), class: 'progress-bar progress-bar-danger',

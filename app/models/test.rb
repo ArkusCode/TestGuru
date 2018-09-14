@@ -18,4 +18,8 @@ class Test < ApplicationRecord
       .order(title: :desc, level: :asc)
       .pluck(:title)
   end
+
+  def timer?
+    timer.positive?
+  end
 end

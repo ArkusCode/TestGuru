@@ -31,10 +31,22 @@ class UserTest < ApplicationRecord
     (current_question_number.to_f / self.test.questions.count) * 100
   end
 
+  def timeout?
+    Time.current > active_time
+  end
+
+  def time_left
+    (active_time - Time.current).to_i
+  end
+
   private
 
   def before_save_set_next_question
     self.current_question = next_question
+  end
+
+  def active_time
+    created_at + test.timer.seconds
   end
 
   def correct_answer?(answer_ids)
